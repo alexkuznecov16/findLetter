@@ -1,9 +1,9 @@
 // main (manager) function - create variables, send variables to check, write result in result area
 const mainFunction = () => {
 	const userText = document.getElementById('userText').value; // user text
-	const userValue = document.getElementById('userValue').value; // user letter
+	const userLetter = document.getElementById('userLetter').value; // user letter
 	const resultArea = document.getElementById('textArea'); // Area for result
-	const checkResult = checkFunction(userText, userValue); // send arguments to check
+	const checkResult = checkFunction(userText, userLetter); // send arguments to check
 
 	if (!checkResult[0]) {
 		resultArea.style.color = 'red'; // result area color
@@ -21,7 +21,7 @@ const checkFunction = (text, letter) => {
 	if (!text || !letter) {
 		result = [false, '>> Invalid data: empty data.']; // error: empty data
 	} else if (text && letter) {
-		const textArray = text.split(''); // iterate user text
+		const textArray = text.toLowerCase().split(''); // iterate user text
 		let foundLetterIndexes = new Array(); // letter indexes counter
 
 		// iterate each text letter and check

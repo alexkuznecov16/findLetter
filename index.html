@@ -6,27 +6,72 @@
   <title>Find letter</title>
   <meta name='author' content='Alexander Kuznecov'>
   <link rel="stylesheet" href="styles/style.css">
+  <script src="https://kit.fontawesome.com/39bbe9b596.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <main class="main">
     <div class="main__container container">
       <div class="main__inner">
         <div class="main__info">
-          <h1 class="title">Palindrom and def. of Fibonacci</h1>
+          <h1 class="title">Find letter</h1>
         </div>
         <div class="main__task">
           <div class="main__task--area">
             <div class="main__area--enter">
               <label for="userText">Enter text:</label>
-              <input id='userText' type="text">
-              <label for="userValue">Enter value:</label>
-              <input id='userValue' type="text">
-              <button onclick='mainFunction()' id='resultSubmitBtn' type="button">Submit</button>
+              <input class='peleks' value='Hello' id='userText' type="text">
+              <label for="userLetter">Enter letter:</label>
+              <input class='peleks' value='l' id='userLetter' type="text">
+              <button onclick='mainFunction()' id='resultSubmitBtn' type="button">Find</button>
             </div>
-            <textarea readonly id="textArea" cols="40" rows="10"></textarea>
+            <textarea readonly id="textArea" cols="40" rows="10">>> Valid data: Letter is found at 2,3 indexes.</textarea>
           </div>
         </div>
       </div>
+      <!--  Paskaidrojumi par to, kā projekts darbojas  -->
+		<details>
+			<summary>Kā tas darbojas?</summary>
+			<!---------------------------------------->
+<div class="box">
+<p class="izmerL">1. Ievads</p>
+<blockquote>Šis projekts nepieciešams tam, lai lietotāji varētu atrast konkrētu elementu tekstā. Zemāk redzams galvenais JavaScript kods, kas ieviests šajā projektā</blockquote>
+<!---------------------------------------->
+<p class="izmerL">2. JavaScript kods</p>
+<blockquote>
+Projektā tiek izmantotas divas funkcijas:
+<ol>
+<li>Pārvaldnieka funkcija '<span class="zils">mainFunc()</span>' datu iegūšanai no lietotāja, visu pārējo funkciju izsaukšanai un gala rezultātu izdrukāšanai (šī funkcija tiek aktivizēta, noklikšķinot uz pogas 'Find');</li>
+<li>funkcija vērtību testēšanai un rezultatu atrisinasanai '<span class="zils">checkFunc(text, letter)</span>', lietotaja ievadits teksts un elements, kuru ir jaatrast;</li>
+</ol>
+Šī projekta galvenās funkcijas JavaScript kods ir parādīts laukā zemāk:
+</blockquote>
+
+<i class="fa-brands fa-js"></i>
+<pre> 
+const textArray = text.toLowerCase().split(''); <span class="peleks">// iterate user text</span>
+let foundLetterIndexes = new Array(); <span class="peleks">// letter indexes counter</span>
+
+<span class="peleks">// iterate each text letter and check</span>
+for (let x = 0; x < textArray.length; x++) {
+  if (textArray[x] == letter) {
+    foundLetterIndexes.push(x); <span class="peleks">// if letter is found, than add to array of found letter indexes</span>
+  }
+}
+
+<span class="peleks">// check count of found letter indexes</span>
+if (foundLetterIndexes.length >= 1) {
+  if (foundLetterIndexes.length > 1) {
+    result = [true, `>> Valid data: Letter is found at ${foundLetterIndexes} indexes.`]; <span class="peleks">// letter indexes count is bigger than 1</span>
+  } else {
+    result = [true, `>> Valid data: Letter is found at ${foundLetterIndexes} index.`]; <span class="peleks">// letter index count is 1</span>
+  }
+} else {
+  result = [false, `>> Invalid data: Letter is not found.`]; <span class="peleks">// error: letter indexes count is smaller, than 1 is not found</span>
+}
+</pre>
+<blockquote>Noklikšķiniet uz <a target='_blank' href="./assets/flowchart.png">šīs ikonas <i class="fa-solid fa-diagram-project"></i></a>, lai skatītu šī JavaScript koda blokshēmu.</blockquote>
+      </div>
+		</details>
     </div>
   </main>
   <!-- /.main -->

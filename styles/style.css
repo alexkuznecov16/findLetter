@@ -15,7 +15,26 @@ body {
   outline: 0;
 }
 
+.zils {
+  color: blue;
+}
+
+.peleks {
+  color: gray;
+}
+
+.izmerL {
+  font-size: 20px;
+}
+
+pre {
+  background: aliceblue;
+  padding: 15px;
+}
+
 br {
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
 }
 
@@ -30,7 +49,8 @@ br {
 .main {
   background-color: #f0f0f0;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: fit-content;
+  min-height: calc(100vh - 100px);
   padding: 20px;
 }
 
@@ -44,6 +64,7 @@ br {
 .main__task--area {
   text-align: center;
   margin-bottom: 20px;
+  width: clamp(100px, 60vw, 400px);
 }
 
 .main__area--enter {
@@ -83,6 +104,28 @@ textarea {
   box-sizing: border-box;
   font-size: 15px;
   resize: none;
+}
+
+.box {
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+details {
+  text-align: center;
+  padding: 15px 25px;
+  background-color: antiquewhite;
+  border: 1px solid #f0f0f0;
+  -o-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  border-radius: 12px;
+  word-break: break-all;
+}
+
+summary {
+  font-size: clamp(6px, 6vw, 18px);
 }
 /* main block styles end ================================  */
 
