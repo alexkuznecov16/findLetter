@@ -27,11 +27,6 @@ body {
   font-size: 20px;
 }
 
-pre {
-  background: aliceblue;
-  padding: 15px;
-}
-
 br {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -59,6 +54,10 @@ br {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+.title {
+  text-align: center;
 }
 
 .main__task--area {
@@ -122,6 +121,13 @@ details {
   -ms-border-radius: 12px;
   border-radius: 12px;
   word-break: break-all;
+}
+
+pre {
+  background: aliceblue;
+  padding: 15px;
+  font-size: clamp(6px, 4vw, 16px);
+  text-wrap: balance;
 }
 
 summary {
