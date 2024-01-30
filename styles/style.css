@@ -73,6 +73,11 @@ br {
   text-align: left;
 }
 
+input {
+  padding: 4px 6px;
+  font-size: clamp(10px, 6vw, 27px);
+}
+
 button {
   padding: 8px 15px;
   background-color: #007bff;
